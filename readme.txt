@@ -4,6 +4,7 @@ Integrantes:
 Rossmary Paredes 
 Daniel Aguero
 Jesús Segovia
+Elias Franco 
 
 Páginas que fueron incorporadas en esta tarea: Se añadieron secciones interactivas en contacto.html
 el correspondiente formulario y en productos.html la tabla de datos.
