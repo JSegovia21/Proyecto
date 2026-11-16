@@ -1,0 +1,197 @@
+/* ModaExpress - estilos.css
+   Paleta: tinta #0f2a43 | señal #f2b705 | hielo #eef3f7 | texto #1d2733 */
+
+:root {
+  --tinta: #0f2a43;
+  --senal: #f2b705;
+  --hielo: #eef3f7;
+  --texto: #1d2733;
+  --gris: #5b6773;
+  --linea: rgba(15, 42, 67, 0.18);
+}
+
+/* ---------- Base (selector de etiqueta) ---------- */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--texto);
+  background-color: var(--hielo);
+}
+
+p { margin: 0 0 1rem; max-width: 70ch; text-align: left; }
+img { max-width: 100%; height: auto; }
+
+/* ---------- Títulos (agrupación de selectores) ---------- */
+h1, h2, h3 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  line-height: 1.2;
+  color: var(--tinta);
+}
+h2 { font-size: 1.7rem; font-weight: 700; margin: 0 0 0.75rem; }
+h3 { font-size: 1.2rem; font-weight: 600; margin: 0 0 0.5rem; }
+
+/* ---------- Encabezado y navegación ---------- */
+header { background-color: var(--tinta); text-align: center; padding: 1.5rem 1rem 0; }
+header h1 { margin: 0; font-size: 2.6rem; font-weight: 700; color: var(--senal); }
+header p { margin: 0.25rem auto 1rem; color: #ffffff; }
+
+nav ul {
+  display: flex;               /* Flexbox */
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav a {                        /* selector descendiente */
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+}
+nav a:hover { background-color: rgba(255, 255, 255, 0.12); border-bottom-color: var(--senal); }
+
+/* ---------- Enlaces ---------- */
+a { color: #1f4fa3; }
+a:hover { color: #8a6100; text-decoration: underline; }
+
+/* ---------- Contenido ---------- */
+main { max-width: 960px; margin: 0 auto; padding: 1.5rem 1rem 2rem; }
+main section { margin-bottom: 2rem; }
+
+/* Selector de identificador + imagen de fondo con posición, tamaño y repetición */
+#bienvenido {
+  padding: 4rem 1.5rem;
+  color: #ffffff;
+  background-image: linear-gradient(rgba(15, 42, 67, 0.72), rgba(15, 42, 67, 0.72)), url("coleccion.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#bienvenido h2 { color: #ffffff; font-size: 2.2rem; }
+
+/* Grid: tarjetas de destacados y equipo */
+#destacados, #equipo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+#destacados > h2, #equipo > h2 { grid-column: 1 / -1; margin-bottom: 0; }
+
+/* Clases reutilizadas en varias páginas */
+.tarjeta {
+  background-color: #ffffff;
+  padding: 1rem 1.25rem;
+  border-left: 6px solid var(--senal);
+}
+.tarjeta img { display: block; margin-bottom: 0.75rem; }
+
+.destacado {
+  margin: 0 0 2rem;
+  padding: 1rem 1.25rem;
+  background-color: var(--tinta);
+  color: #ffffff;
+  font-style: italic;
+}
+.destacado h3 { color: var(--senal); font-style: normal; }
+
+/* ---------- Listas ---------- */
+main ul { padding-left: 1.5rem; list-style-type: square; }
+main ol { padding-left: 2rem; list-style-type: decimal-leading-zero; }
+main li { margin-bottom: 0.35rem; }
+li::marker { color: #b37f00; }
+
+/* ---------- Tablas ---------- */
+.tabla-contenedor {            /* las tablas anchas se desplazan dentro de su contenedor */
+  overflow-x: auto;
+  background-color: #ffffff;
+  border: 1px solid var(--linea);
+}
+table { width: 100%; min-width: 600px; border-collapse: collapse; }
+caption {
+  caption-side: top;
+  padding: 0.75rem 1rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: left;
+  color: var(--tinta);
+}
+th, td { padding: 0.65rem 1rem; text-align: left; border-bottom: 1px solid var(--linea); }
+thead th { background-color: var(--tinta); color: #ffffff; }
+tbody th { font-weight: 600; color: var(--tinta); }
+tbody tr:nth-child(even) { background-color: rgb(238, 243, 247); }
+tbody tr:hover { background-color: rgba(242, 183, 5, 0.18); }
+tfoot td { font-style: italic; color: var(--gris); }
+
+/* ---------- Formularios ---------- */
+form {
+  max-width: 560px;
+  padding: 1.25rem 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid var(--linea);
+  border-top: 6px solid var(--senal);
+}
+form p { max-width: none; }
+label { font-weight: 600; }
+input, select, textarea {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  background-color: #ffffff;
+  border: 1px solid #9aa7b4;
+}
+input[type="radio"], input[type="checkbox"] { width: auto; margin-right: 0.4rem; }
+input:invalid:not(:placeholder-shown), textarea:invalid:not(:placeholder-shown) { border-color: #b3261e; }
+
+button {
+  margin: 0.25rem 0.5rem 0.25rem 0;
+  padding: 0.65rem 1.25rem;
+  font: inherit;
+  font-weight: 600;
+  color: var(--tinta);
+  background-color: var(--senal);
+  border: 2px solid var(--tinta);
+  cursor: pointer;
+}
+button[type="reset"] { background-color: #ffffff; }
+button:hover { background-color: var(--tinta); color: #ffffff; }
+
+/* Foco visible */
+a:focus-visible, input:focus-visible, select:focus-visible,
+textarea:focus-visible, button:focus-visible {
+  outline: 3px solid var(--tinta);
+  outline-offset: 2px;
+  background-color: #fff8de;
+}
+nav a:focus-visible { outline-color: var(--senal); background-color: rgba(255, 255, 255, 0.12); }
+
+/* Mensajes visibles para el JavaScript (éxito / error de validación) */
+.mensaje { margin: 1rem 0; padding: 0.75rem 1rem; font-weight: 600; border-left: 6px solid; }
+.mensaje.ok { color: #14532d; background-color: #e3f4e8; border-color: #1e7a3c; }
+.mensaje.error { color: #7a1812; background-color: #fde8e6; border-color: #b3261e; }
+
+/* ---------- Pie ---------- */
+footer { padding: 1.25rem 1rem; text-align: center; color: #ffffff; background-color: var(--tinta); }
+footer p { margin: 0.25rem auto; }
+footer a { color: var(--senal); }
+footer a:hover { color: #ffffff; }
+
+/* ---------- Pantallas angostas ---------- */
+@media (max-width: 600px) {
+  header h1 { font-size: 2rem; }
+  nav ul { flex-direction: column; gap: 0; }
+  nav a { padding: 0.7rem 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+  main { padding: 1rem 0.75rem; }
+  #bienvenido { padding: 2.5rem 1rem; }
+  #bienvenido h2 { font-size: 1.7rem; }
+  form { padding: 1rem; }
+  button { width: 100%; margin-right: 0; }
+}
