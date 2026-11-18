@@ -226,6 +226,44 @@ button {
 button[type="reset"] { background-color: #ffffff; }
 button:hover { background-color: var(--tinta); color: #ffffff; }
 
+/* Mejoras de presentación de formularios */
+
+form label {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+form p {
+  margin-bottom: 1rem;
+}
+
+form input:not([type="checkbox"]):not([type="radio"]),
+form select,
+form textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 4px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: var(--tinta);
+  box-shadow: 0 0 0 3px rgba(15, 42, 67, 0.12);
+  outline: none;
+}
+
+form button {
+  min-height: 42px;
+  border-radius: 4px;
+}
+
+form button[type="reset"] {
+  border-color: #9aa7b4;
+}
+
 /* Foco visible */
 a:focus-visible, input:focus-visible, select:focus-visible,
 textarea:focus-visible, button:focus-visible {
