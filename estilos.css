@@ -184,14 +184,156 @@ footer p { margin: 0.25rem auto; }
 footer a { color: var(--senal); }
 footer a:hover { color: #ffffff; }
 
-/* ---------- Pantallas angostas ---------- */
+
+/* ---------- Adaptación responsive ---------- */
+
+/* Tablets */
+@media (max-width: 768px) {
+  main {
+    max-width: 100%;
+    padding: 1.25rem 1rem;
+  }
+
+  #destacados,
+  #equipo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  header h1 {
+    font-size: 2.3rem;
+  }
+
+  .tarjeta {
+    min-width: 0;
+  }
+}
+
+/* Celulares */
 @media (max-width: 600px) {
-  header h1 { font-size: 2rem; }
-  nav ul { flex-direction: column; gap: 0; }
-  nav a { padding: 0.7rem 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
-  main { padding: 1rem 0.75rem; }
-  #bienvenido { padding: 2.5rem 1rem; }
-  #bienvenido h2 { font-size: 1.7rem; }
-  form { padding: 1rem; }
-  button { width: 100%; margin-right: 0; }
+  header {
+    padding: 1.25rem 0.75rem 0;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  nav a {
+    padding: 0.65rem 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  main {
+    padding: 1rem 0.75rem;
+  }
+
+  main section {
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.45rem;
+  }
+
+  #bienvenido {
+    padding: 2.5rem 1rem;
+    background-position: center;
+  }
+
+  #bienvenido h2 {
+    font-size: 1.7rem;
+  }
+
+  #destacados,
+  #equipo {
+    grid-template-columns: 1fr;
+  }
+
+  .tarjeta {
+    padding: 1rem;
+  }
+
+  .destacado {
+    padding: 1rem;
+  }
+
+  /* Las tablas conservan sus columnas y permiten desplazamiento */
+  .tabla-contenedor {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    min-width: 600px;
+  }
+
+  th,
+  td {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  /* Formularios */
+  form {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  input,
+  select,
+  textarea {
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  textarea {
+    min-height: 110px;
+    resize: vertical;
+  }
+
+  button {
+    width: 100%;
+    margin: 0.35rem 0;
+  }
+
+  footer {
+    padding: 1rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Celulares pequeños */
+@media (max-width: 380px) {
+  header h1 {
+    font-size: 1.75rem;
+  }
+
+  #bienvenido h2 {
+    font-size: 1.45rem;
+  }
+
+  main {
+    padding: 0.85rem 0.6rem;
+  }
+
+  .tarjeta,
+  .destacado {
+    padding: 0.85rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
 }
