@@ -1,5 +1,5 @@
-!DOCTYPE html>
-
+```html
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -14,12 +14,13 @@
     <header>
         <h1>ModaExpress</h1>
         <p>Ropa deportiva cómoda para tu día a día</p>
+
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="productos.html">Productos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="contacto.html" aria-current="page">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -30,7 +31,7 @@
             <ul>
                 <li>Teléfono: 0983 456 231</li>
                 <li>Correo Electrónico: modaexpress1@gmail.com</li>
-                <li>Dirección: Av. Deportiva 789, Capiata, Paraguay</li>
+                <li>Dirección: Av. Deportiva 789, Capiatá, Paraguay</li>
             </ul>
         </section>
 
@@ -43,84 +44,93 @@
         </section>
 
         <section id="formulario-contacto">
-            <h2>Complete el formulario de Consulta</h2>
-            <p>Completa por favor el formulario para saber más información acerca de nuestro stock</p>
+            <h2>Complete el formulario de consulta</h2>
+            <p>Completá el formulario para solicitar más información acerca de nuestro stock.</p>
+
             <form action="#" method="get">
                 <p>
-                    <label for="nombre">Nombre y Apellido: </label><br>
-
-                    <input type="text" id="nombre" name="nombre" placeholder=" Ejemplo: Barry Allen" required
-                        minlength="3" autofocus>
+                    <label for="nombre">Nombre y Apellido:</label>
+                    <input type="text" id="nombre" name="nombre"
+                        placeholder="Ejemplo: Barry Allen"
+                        minlength="3" maxlength="70" required autofocus>
                 </p>
 
                 <p>
-                    <label for="correo">Correo electrónico: </label><br>
-
+                    <label for="correo">Correo electrónico:</label>
                     <input type="email" id="correo" name="correo"
-                        placeholder=" Ejemplo: barryallen@gmail.com o barryalleng@hotmail.com" required>
+                        placeholder="Ejemplo: barryallen@gmail.com" required>
                 </p>
 
                 <p>
-                    <label for="telefono">Teléfono Celular: </label><br>
-
-                    <input type="tel" id="telefono" name="telefono" placeholder=" Ejemplo: 0981 698 457" required>
+                    <label for="telefono">Teléfono celular:</label>
+                    <input type="tel" id="telefono" name="telefono"
+                        placeholder="Ejemplo: 0981 698 457"
+                        pattern="[0-9 +()-]{7,20}"
+                        title="Ingresá un número de teléfono válido" required>
                 </p>
 
                 <p>
-                    <label for="cantidad">Elegí la cantidad de prendas que necesitas consultar: </label><br>
-
-                    <input type="number" id="cantidad" name="cantidad" min="1" max="65"
-                        placeholder="Ingrese la cantidad">
+                    <label for="cantidad">Cantidad de prendas que necesitás consultar:</label>
+                    <input type="number" id="cantidad" name="cantidad"
+                        min="1" max="65" placeholder="Ingrese la cantidad" required>
                 </p>
 
                 <p>
-                    <label for="fecha">Fecha para que se contacte: </label><br>
-
+                    <label for="fecha">Fecha para que nos contactemos:</label>
                     <input type="date" id="fecha" name="fecha">
                 </p>
 
                 <p>
-                    <label for="titulo-consulta">Título: </label><br>
-
+                    <label for="titulo-consulta">Título de la consulta:</label>
                     <input type="text" id="titulo-consulta" name="titulo-consulta"
-                        placeholder="Consulta sobre talles, colores, envios etc">
+                        placeholder="Talles, colores, envíos, etc."
+                        maxlength="100" required>
                 </p>
 
                 <p>
-                    <label for="mensaje">Mensaje: </label><br>
-
-                    <textarea id="mensaje" name="mensaje" rows="5" cols="32" placeholder="Escriba su mensaje aquí"
-                        required></textarea>
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5"
+                        placeholder="Escribí tu mensaje aquí"
+                        minlength="10" maxlength="500" required></textarea>
                 </p>
+
                 <p>
-                    <button type="submit">Enviar su consulta</button>
-                    <button type="reset">Limpiar el formulario y empieza de nuevo.</button>
+                    <button type="submit">Enviar consulta</button>
+                    <button type="reset">Limpiar formulario</button>
                 </p>
-
             </form>
         </section>
 
         <section id="ubicacion">
             <h2>Cómo llegar</h2>
             <p>
-                Nuestro local está ubicado sobre la Avenida Deportiva, con fácil acceso en transporte público y
-                estacionamiento cercano.
+                Nuestro local está ubicado sobre la Avenida Deportiva,
+                con fácil acceso en transporte público y estacionamiento cercano.
             </p>
             <p>
-                Encontranos en <a href="https://www.google.com/maps" target="_blank">Google Maps</a>
-                buscando "ModaExpress"
+                Encontranos en
+                <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">
+                    Google Maps
+                </a>
+                buscando "ModaExpress".
             </p>
         </section>
+
         <aside class="destacado">
             <h3>¿Tenés dudas?</h3>
-            <p>Escribinos al WhatsApp al mismo número de teléfono y te respondemos a la brevedad.</p>
+            <p>Escribinos por WhatsApp al mismo número de teléfono y te respondemos a la brevedad.</p>
         </aside>
     </main>
 
     <footer>
         <p>&copy; 2026 ModaExpress. Todos los derechos reservados.</p>
-        <p>Seguinos en <a href="https://www.instagram.com" target="_blank">Instagram</a></p>
+        <p>Seguinos en
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                Instagram
+            </a>
+        </p>
     </footer>
 </body>
 
 </html>
+```
